@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "hospital-bed-management-caaf4",
+  "private_key_id": "02e363f4cd157b6c10dd8ac5ba652af0155c0eca",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDDMTr67qIugeyP\nWPx86d6QTJoyQkxiaguWwBnVBwVPOIGLOoHoYM1yk2zzgq8+vHdSAWMdtJN9WMPb\notgWSa2eXwiINECGyLUCu6Hg8nT525XWFQybNbeLv2mVZNam59JSLmqdZkHxcmQ8\nT4tyvoYVux7ImOvtM6Xozgnhjj7FJrm4Xh/gsUMVePpBMG41Cegl2Es3p0qc2t3J\ntJzezWOADO3fWDWOIpFx9X/RocmdeXImOGxOriymeCFoczuyjpaaFg6OIQN440M2\nopL2GyT25w1UI6+hvNsFxv3Z24JYjIlKlQehNyN1cyyx1UH5h1dtHDNWWTcEpRfh\npuhQOHDZAgMBAAECggEAAdGnAJQVKpM77XBZU2XGCBv3CWSDa/Z1rG/wMnzvfGfu\neOoAo4+oYBEv406KopS0yD/ttabukDnYKTP83CtPjQGxDyNGhFyhNDKKegTkZZ75\njnTK6OgQ0W8+yFCLEz1zwPlaAlfwoboZfuB7/RCGgedI7IdhSagqlQJuubCx+zOv\ncM4Tw1mwWFy9zN58Sg8lc/+jedu43FxJ3YjTaUxeh3ZEib9b37Lsnt6s8WXKij8P\nifaW4o9CScpgW9NKRUVEuRg89HDNTSwXFbV91ObGtGIhhu8lDuTg3QHXbCj/afJa\nNbdHXenq3ba0X9sqXJoJTFAtfByqat82AUQFv+RyEQKBgQDlZyElJkgGHV7nLWCT\nzHhoSPx+sBhna3rUtHydkMzCTZECybY3q9hlBriGkmGM7a514ysBd95/1FoqPxl5\nnZNRhBGFc31vCTFxpWJZWDuG1QwzkWP04amOAL6W4jto3BmrKmTBFSJyJ8iNVIzq\n3sapQFnVKl2N+ak+biDo/Dt/EQKBgQDZ0rP8XKQc7u11a/L/VFa545b94MpkRjgG\nY/mIGjttot2rbTMRwo8elAEkQ/vX8YeRRKozGZE1Zfl6CZE3b4nFTkmCxeEQw32w\n/3jcAfKwBDmvMqC2vcvpllEFqnUdGpXzJm22dZPo7NmAahUD8ZSCj1vu3VB6ckmr\nFFan3yflSQKBgQDcEFuufJO5MfG5iUFNZ2fWerWlfp5aj7OMWvv0V1TlzG0gpIol\ny7dR6umXRtNH0zZ6Jos55FjQfdBlGJUCopQRLcV1JL4eh04kPEgld0vbY4NJ8N5X\nqybxb2tl6O6fAA2rsoZm5zRdGCb+1S49naor8Ox8XiDTMr4VgqYVeupEUQKBgQCp\nVYfedBaQ951aX2U04VfagvdqvkoY0g3Tyfy+tcXlYWt6TRYahGnGl8CbdM5f/cAq\nSnsV5pZgMLpVCQL/WZJ89HNpWnOxGIiqBLDsOAd2lpJRhMYzyjCvks/B29XXnkdc\nE0/PPHCT7yzXC6Dyw+dz6AbMFvjtd9OVT+Zd8rmNIQKBgQCpB6IV2UH1FKAFZ9MD\nI5P9vx8i4rmDrgdtpuk9hoKVlSEB5nv0jUj6XFWd0g1nDA1gcpnOS7gq0RM5JLTl\nR3EZKCl/S05isuoBrx9Q2S/fnq01YjviZTbAAQo8pRWIpvkeGzWehz7M8Pq4Ftsw\nyhWNZhbuVIAWipITTPqX00nJ/A==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-zf2n8@hospital-bed-management-caaf4.iam.gserviceaccount.com",
+  "client_id": "117640059300957151272",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-zf2n8%40hospital-bed-management-caaf4.iam.gserviceaccount.com"
+}

@@ -1,0 +1,14 @@
+{% extends "hospital/base.html" %}
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% for hospital in hospitals %}
+       <div> {{hospital.name}} </div> 
+       <div> {{hospital.email}} </div> 
+       <div> {{hospital.address}} </div> 
+    {% endfor %}
+{% endblock content %}
