@@ -1,5 +1,31 @@
 {% extends "hospital/base.html" %}
 {% block content %}
-
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container-fluid">
+        <form name="myForm" class="form-inline" method="post" action="">
+            <div class="form-group">
+              <label for="location">Search via pincode</label>
+              {% ifequal location|stringformat:"s" "None" %}
+                <input type="text" class="form-control" name="location" id="location" >
+              {% else %}
+                <input type="text" class="form-control" name="location" id="location" value="{{location}}">
+              {% endifequal %}
+              {% csrf_token %}
+            </div>
+        </form>
+    </div>
+    {% for hospital in hospitals %}
+        {% ifequal hospital.pincode|stringformat:"s" location %}
+            <div> {{hospital.name}} </div> 
+            <div> {{hospital.email}} </div> 
+            <div> {{hospital.address}} </div>
+            <div> {{hospital.contactno}} </div>
+            <div> {{hospital.pincode}} </div> 
+       {% endifequal %}
+    {% endfor %}
 {% endblock content %}
