@@ -19,7 +19,7 @@
             </div>
         </form>
     </div>
-    {% for hospital in hospitals %}
+    <!-- {% for hospital in hospitals %}
         {% ifequal hospital.pincode|stringformat:"s" location %}
             <div> {{hospital.name}} </div> 
             <div> {{hospital.email}} </div> 
@@ -27,5 +27,35 @@
             <div> {{hospital.contactno}} </div>
             <div> {{hospital.pincode}} </div> 
        {% endifequal %}
-    {% endfor %}
+    {% endfor %} -->
+    
+    <div class="container-fluid" style=" padding: 50px; align-content:center">  
+      <div class="tb table-responsive">
+        <table class="table table-striped table-hover">
+          <thead class="th">
+            <tr class="d-flex">
+              <th class="col-1 text-center">Sr No</th>
+              <th class="col-3 text-center">Name of hospital</th>
+              <th class="col-3 text-center">Address</th>
+              <th class="col-2 text-center">Contact No</th>
+              <th class="col-3 text-center">Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for hospital in hospitals %}
+                {% ifequal hospital.pincode|stringformat:"s" location %}
+                    <tr class="d-flex">
+                    <th class="col-1 text-center">{{forloop.counter0}} </th>
+                    <td class="col-3 text-center">{{hospital.name}}</td>
+                    <td class="col-3 text-center">{{hospital.address}}</td>
+                    <td class="col-2 text-center">{{hospital.contactno}}</td>
+                    <td class="col-3 text-center">{{hospital.email}}</td>
+                    </tr>
+                
+                {% endifequal %}
+            {% endfor %}  
+          </tbody>
+        </table>
+      </div>
+    </div>
 {% endblock content %}

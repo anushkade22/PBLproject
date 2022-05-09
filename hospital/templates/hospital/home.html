@@ -15,7 +15,7 @@
       <div class="carousel-item active" style="background-image: url(/static/hospital/images/slide/slide-1.jpg)">
         <div class="container">
           <h2>Hospital Bed Booking</h2>
-          <p>This life is a hospital in which every patient is possessed with a desire to change his bed.</p>
+          <p>If you'are having trouble securing a bed in a hospital, book them in advance in case of emergencies. </p>
           <!-- <a href="#about" class="btn-get-started scrollto">Read More</a> -->
         </div>
       </div>
@@ -62,7 +62,7 @@
       <div class="text-center">
         <h3>In an emergency? Need help now?</h3>
         <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <a class="cta-btn scrollto" href="{% url 'hospital-appointment' %}">Make an Appointment</a>
+        <a class="cta-btn scrollto" href="{% url 'hospital-bed-availabilty' %}">Make an Appointment</a>
       </div>
 
     </div>
@@ -148,19 +148,19 @@
 
  
 
-  <!-- ======= Frequently Asked Questioins Section ======= -->
+  <!-- ======= Frequently Asked Questions Section ======= -->
   <section id="faq" class="faq section-bg">
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
         <h2>Frequently Asked Questioins</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        <p>Get your answers before asking the questions!</p>
       </div>
 
       <ul class="faq-list">
 
         <li>
-          <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Non consectetur a erat nam at lectus urna duis? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+          <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Can we cancel the bed booking?<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
           <div id="faq1" class="collapse" data-bs-parent=".faq-list">
             <p>
               Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
@@ -262,7 +262,7 @@
         </div>
 
         <div class="col-lg-6">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <form action="#hero" method="post" role="form">
             <div class="row">
               <div class="col form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -277,12 +277,12 @@
             <div class="form-group mt-3">
               <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
             </div>
-            <div class="my-3">
+            <!-- <div class="my-3">
               <div class="loading">Loading</div>
               <div class="error-message"></div>
               <div class="sent-message">Your feedback has been sent. Thank you!</div>
-            </div>
-            <div class="text-center"><button type="submit">Send Feedback</button></div>
+            </div> -->
+            <div class="text-center"><button type="submit" onclick="myFunction()">Send Feedback</button></div>
           </form>
         </div>
 
@@ -292,7 +292,11 @@
   </section><!-- End Contact Section -->
 
 </main><!-- End #main -->
-
+<script>
+  function myFunction() {
+    alert("feedback submitted");
+  }
+  </script>
 
 {% endblock content %}
   

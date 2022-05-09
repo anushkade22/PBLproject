@@ -12,11 +12,6 @@ db= firestore.client()
 hospitalCollection = db.collection('hospitals')
 userInfo = db.collection('user_info')
 
-hospitals = hospitalCollection.get()
-hospitalList=[]
-for hospital in hospitals:
-    print(hospital.to_dict())
-    hospitalList.append(hospital.to_dict())
     
 def home(request):
        
@@ -24,41 +19,79 @@ def home(request):
 
 def bedManagement(request):
     location = request.POST.get('location')
-
+    hospitals = hospitalCollection.get()
+    hospitalList=[]
+    for hospital in hospitals:
+        hospitalList.append(hospital.to_dict())
     return render(request,'hospital/bedavail.html',{'title':'Bed-availability' , "hospitals":hospitalList, "location": location})
 
 def donation(request):
-    return render(request,'hospital/donate.html',{'title':'Donation' ,  "hospitals":hospitalList})
+    location = request.POST.get('location')
+    return render(request,'hospital/donate.html',{'title':'Donation' ,  "location": location})
 
 def appointment(request):
+    hospitals = hospitalCollection.get()
+    hospitalList=[]
+    for hospital in hospitals:
+        hospitalList.append(hospital.to_dict())
+    hemail = request.GET.get('hemail')
+    #docs = hospitalCollection.where('email', u'==', hemail).stream()
+    flag = False
+    updated = False
+    print(flag)
     if request.method == "POST":
         myform = InputForm()
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
-        aadhar = request.POST.get('aadhar')
-        address = request.POST.get('address')
-        date = request.POST.get('date')
-        age = request.POST.get('age')
-        disease = request.POST.get('disease')
-        gender = request.POST.get('gender')
-        message = request.POST.get('message')
-        myform.name = name
-        myform.email = email
-        myform.phone = phone
-        myform.aadhar = aadhar
-        myform.address = address
-        myform.date = date
-        myform.age = age
-        myform.disease = disease
-        myform.gender = gender
-        myform.message = message
-        print(myform.name)
+        myform.name = request.POST.get('name')
+        myform.email = request.POST.get('email')
+        myform.phone = request.POST.get('phone')
+        myform.aadhar = request.POST.get('aadhar')
+        myform.address = request.POST.get('address')
+        myform.date = request.POST.get('date')
+        myform.age = request.POST.get('age')
+        myform.disease = request.POST.get('disease')
+        myform.gender = request.POST.get('gender')
+        myform.message = request.POST.get('message')
+        print(myform.name + "" +myform.email)
+        for user in userInfo.where('email', '==', myform.email).stream():
+            #bedAvail =user.to_dict()['email'];
+            flag = True
+        
+        if not flag: 
+            updated = True
+            #doc_ref = userInfo.document(myform.email)
+            #doc_ref.set({
+            doc_ref = userInfo.add({
+                'name' : myform.name,
+                'email': myform.email,
+                'phone': myform.phone,
+                'aadhar': myform.aadhar,
+                'address': myform.address,
+                'date': myform.date,
+                'age': myform.age,
+                'disease': myform.disease,
+                'gender': myform.gender,
+                'message': myform.message,
+                'hemail': hemail
+            })
+            for hospital in hospitalCollection.where('email', '==', hemail).stream():
+                bedAvail =hospital.to_dict()['bedavail'];
+                hospital_ref = hospitalCollection.document(hospital.id)
+                hospital_ref.update({u'bedavail': bedAvail-1})
         context ={
             'myform':myform,
-            'name' : myform.name
+            'name' : myform.name,
+            'email': myform.email,
+            'phone': myform.phone,
+            'aadhar': myform.aadhar,
+            'address': myform.address,
+            'date': myform.date,
+            'age': myform.age,
+            'disease': myform.disease,
+            'gender': myform.gender,
+            'message': myform.message,
+            'updated':updated,
+            'exists':flag
         }
-        
     else:
         myform = InputForm()
         context ={

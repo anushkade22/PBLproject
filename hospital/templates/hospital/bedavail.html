@@ -52,7 +52,7 @@
                     <td class="col-2 text-center">{{hospital.contactno}}</td>
                     <td class="col-2 text-center">{{hospital.email}}</td>
                     {% if hospital.bedavail > 0 %}
-                      <td class="col-2 text-center"><a href="/appointment"> {{hospital.bedavail}}</a></td>
+                      <td class="col-2 text-center"><a href="/appointment?hemail={{hospital.email}}"> {{hospital.bedavail}}</a></td>
                     {% else %}
                       <td class="col-2 text-center">{{hospital.bedavail}}</td>
                     {% endif %}
